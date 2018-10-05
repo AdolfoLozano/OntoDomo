@@ -1,0 +1,2143 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY cogs "http://vocab.deri.ie/cogs#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#" >
+    <!ENTITY xsp "http://www.owl-ontologies.com/2005/08/07/xsp.owl#" >
+    <!ENTITY swrla "http://swrl.stanford.edu/ontologies/3.3/swrla.owl#" >
+    <!ENTITY sqwrl "http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#" >
+    <!ENTITY temporal "http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://opendata.intellidomo.es/ontologiadomoticabd#"
+     xml:base="http://opendata.intellidomo.es/ontologiadomoticabd"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:cogs="http://vocab.deri.ie/cogs#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:sqwrl="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:temporal="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#">
+    <owl:Ontology rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#">
+        <dc:creator>DDB ha sido desarrollada por Quercus, es una adaptación de la ontología DogOnt.</dc:creator>
+        <rdfs:comment>Descripción de las clases y propiedades que conforman el vocabulario DomoticaDBS. </rdfs:comment>
+        <dc:description>DomoticaDB es una ontología que se utiliza para especificar sensores domóticos y los valores que toman.</dc:description>
+        <dc:title>Ontología DomoticaDB (DDB).</dc:title>
+        <owl:imports rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl"/>
+        <owl:imports rdf:resource="http://swrl.stanford.edu/ontologies/3.3/swrla.owl"/>
+        <owl:imports rdf:resource="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#activate -->
+
+    <owl:ObjectProperty rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#activate">
+        <rdfs:label rdf:datatype="&xsd;string">Condition</rdfs:label>
+        <rdfs:domain rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Device"/>
+        <rdfs:range rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Device"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#hasMapa -->
+
+    <owl:ObjectProperty rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#hasMapa">
+        <rdfs:domain rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Device"/>
+        <rdfs:range rdf:resource="http://www.semanticdesktop.org/ontologies/nfo/#Image"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#hasTipoDatos -->
+
+    <owl:ObjectProperty rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#hasTipoDatos">
+        <rdfs:range rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#DataType"/>
+        <rdfs:domain rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Device"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType -->
+
+    <owl:ObjectProperty rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType">
+        <rdfs:label rdf:datatype="&xsd;string">Condition</rdfs:label>
+        <rdfs:range rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#DataType"/>
+        <rdfs:domain rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Device"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#connected -->
+
+    <owl:DatatypeProperty rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#connected">
+        <rdfs:label rdf:datatype="&xsd;string">Condition</rdfs:label>
+        <rdfs:domain rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Device"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#delay -->
+
+    <owl:DatatypeProperty rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#delay">
+        <rdfs:label rdf:datatype="&xsd;string">Condition Action</rdfs:label>
+        <rdfs:domain rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#GlobalVariables"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#hasCategoria -->
+
+    <owl:DatatypeProperty rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#hasCategoria">
+        <rdfs:domain rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#DataType"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#hasCodigoCasa -->
+
+    <owl:DatatypeProperty rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#hasCodigoCasa">
+        <rdfs:domain rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Device"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#hasCodigoUnidad -->
+
+    <owl:DatatypeProperty rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#hasCodigoUnidad">
+        <rdfs:domain rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Device"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#hasDireccionGrupo -->
+
+    <owl:DatatypeProperty rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#hasDireccionGrupo">
+        <rdfs:domain rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Device"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#hasProtocolo -->
+
+    <owl:DatatypeProperty rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#hasProtocolo">
+        <rdfs:domain rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Device"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#hasValor -->
+
+    <owl:DatatypeProperty rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#hasValor">
+        <rdfs:domain rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Device"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#name -->
+
+    <owl:DatatypeProperty rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#name">
+        <rdfs:label rdf:datatype="&xsd;string">Condition</rdfs:label>
+        <rdfs:domain rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Device"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#protocol -->
+
+    <owl:DatatypeProperty rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#protocol">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">Condition</rdfs:label>
+        <rdfs:domain rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Device"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdf;List"/>
+                        <rdf:first rdf:datatype="&xsd;string">knx</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdf;List"/>
+                                <rdf:first rdf:datatype="&xsd;string">x10</rdf:first>
+                                <rdf:rest rdf:resource="&rdf;nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#sendNotification -->
+
+    <owl:DatatypeProperty rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#sendNotification">
+        <rdfs:label rdf:datatype="&xsd;string">Action</rdfs:label>
+        <rdfs:domain rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Notification"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#value -->
+
+    <owl:DatatypeProperty rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#value">
+        <rdfs:label rdf:datatype="&xsd;string">Condition Action</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;float"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#AlarmClock"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Button"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#CoffeMaker"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Computer"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Cooker"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#DimmableLight"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#DishWasher"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#DoorActuator"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#DoorSensor"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#FlowSensor"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Freezer"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Fridge"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#GasSensor"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Heater"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#HeatingAndCoolingUnit"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#HumiditySensor"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#KitchenStove"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#LightSensor"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#MicrowaveOven"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#MotionSensor"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Oven"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Phone"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#PressureSensor"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Printer"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Radio"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#RainDetector"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Router"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#ShutterActuator"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#SimpleLamp"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#SmokeSensor"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#SurveillanceCamera"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Switch"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#TV"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#TemperatureSensor"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Thermostat"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Ventilator"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#WashingMachine"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#WindSpeedSensor"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#WindowActuator"/>
+                    <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#WindowSensor"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#valueVariable -->
+
+    <owl:DatatypeProperty rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#valueVariable">
+        <rdfs:label rdf:datatype="&xsd;string">Condition Action</rdfs:label>
+        <rdfs:domain rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#GlobalVariables"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#Actuators -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Actuators">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Device"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#AlarmClock -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#AlarmClock">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#BrownGoods"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_On_Off"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#Appliances -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Appliances">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Actuators"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#BrownGoods -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#BrownGoods">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Appliances"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#Button -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Button">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Electricity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_On_Off"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#CoffeMaker -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#CoffeMaker">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#BrownGoods"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_On_Off"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#Computer -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Computer">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#BrownGoods"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_On_Off"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#Cooker -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Cooker">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#WhiteGoods"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_On_Off"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#Critical -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Critical">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Notification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#DataType -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#DataType"/>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#Device -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Device">
+        <owl:equivalentClass rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Device"/>
+        <owl:equivalentClass rdf:resource="&cogs;Device"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#DimmableLight -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#DimmableLight">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Lighting"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_Percentage"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#DishWasher -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#DishWasher">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#WhiteGoods"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_On_Off"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#DoorActuator -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#DoorActuator">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Electricity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_Open_Close"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#DoorSensor -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#DoorSensor">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Sensors"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_OpenWindowOrDoor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#ElectricDipoleMoment -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#ElectricDipoleMoment">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#Electricity -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Electricity">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#HousePlants"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#FlowSensor -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#FlowSensor">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Sensors"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_Boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#Freezer -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Freezer">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#WhiteGoods"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_On_Off"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#Fridge -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Fridge">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#WhiteGoods"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_On_Off"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#GasSensor -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#GasSensor">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Sensors"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_Boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#GlobalVariables -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#GlobalVariables">
+        <rdfs:comment rdf:datatype="&xsd;string"></rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#HVAC -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#HVAC">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#HousePlants"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#Heater -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Heater">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#HVAC"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_On_Off"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#HeatingAndCoolingUnit -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#HeatingAndCoolingUnit">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#HVAC"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_On_Off"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#HousePlants -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#HousePlants">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Actuators"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#HumiditySensor -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#HumiditySensor">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Sensors"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_Percentage"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#Information -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Information">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Notification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#KitchenStove -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#KitchenStove">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#WhiteGoods"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_On_Off"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#LightSensor -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#LightSensor">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Sensors"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_LightQuantity"/>
+                            <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_LuminousFlux"/>
+                            <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_LuminousIntensity"/>
+                            <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Lux"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#Lighting -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Lighting">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Electricity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#MagneticMoment -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#MagneticMoment">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#MagneticPolarization -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#MagneticPolarization">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#Magnetization -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Magnetization">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#MicrowaveOven -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#MicrowaveOven">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#WhiteGoods"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_On_Off"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#MotionSensor -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#MotionSensor">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Sensors"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_Occupied"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#Notification -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Notification"/>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#Oven -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Oven">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#WhiteGoods"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_On_Off"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#Phone -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Phone">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#BrownGoods"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_On_Off"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#PressureSensor -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#PressureSensor">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Sensors"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_Pressure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#Printer -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Printer">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#BrownGoods"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_On_Off"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#Radio -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Radio">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#BrownGoods"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_On_Off"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#RainDetector -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#RainDetector">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Sensors"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_Boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#Router -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Router">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#BrownGoods"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_On_Off"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#Sensors -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Sensors">
+        <owl:equivalentClass rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <owl:equivalentClass rdf:resource="&cogs;Sensor"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Device"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#ShutterActuator -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#ShutterActuator">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Electricity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_Up_Down"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#SimpleLamp -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#SimpleLamp">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Lighting"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_On_Off"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#SmokeSensor -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#SmokeSensor">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Sensors"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_Boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#SurveillanceCamera -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#SurveillanceCamera">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Sensors"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_Occupied"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#Switch -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Switch">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Electricity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_On_Off"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#TV -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#TV">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#BrownGoods"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_On_Off"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#TemperatureSensor -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#TemperatureSensor">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Sensors"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Kevin_Percentage"/>
+                            <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_TemperatureAbsolute"/>
+                            <rdf:Description rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Temperature_C"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#Thermostat -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Thermostat">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Electricity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_Temperature_C"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#Urgent -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Urgent">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Notification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#Ventilator -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Ventilator">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#HVAC"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_On_Off"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#Warning -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#Warning">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Notification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#WashingMachine -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#WashingMachine">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#WhiteGoods"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_On_Off"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#WhiteGoods -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#WhiteGoods">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Appliances"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#WindSpeedSensor -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#WindSpeedSensor">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Sensors"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_Speed"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#WindowActuator -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#WindowActuator">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Electricity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_Open_Close"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#WindowSensor -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#WindowSensor">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#Sensors"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#has_dataType"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_OpenWindowOrDoor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_1bit -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_1bit">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#DataType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesFloat -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesFloat">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#DataType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesSigned -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesSigned">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#DataType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesUnsigned -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesUnsigned">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#DataType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#DataType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesSigned -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesSigned">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#DataType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesUnsigned -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesUnsigned">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#DataType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_8bitsSigned -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_8bitsSigned">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#DataType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_8bitsUnsigned -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_8bitsUnsigned">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#DataType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_A_B -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_A_B">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_1bit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Aceleration -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Aceleration">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Acknowledge -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Acknowledge">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_1bit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_ActivationEnergy -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_ActivationEnergy">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Alarm -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Alarm">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_1bit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_AmountOfSustances -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_AmountOfSustances">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_AmplitudeAngle -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_AmplitudeAngle">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_And_Or -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_And_Or">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_1bit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Angly -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Angly">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_8bitsUnsigned"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_AngularAceleration -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_AngularAceleration">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_AngularFrequency -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_AngularFrequency">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_AngularMomentum -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_AngularMomentum">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_AngularVelocity -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_AngularVelocity">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Area -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Area">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_BinaryValue -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_BinaryValue">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_1bit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Boolean -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Boolean">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_1bit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Capacitance -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Capacitance">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_ChargeDensity -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_ChargeDensity">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Compressibility -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Compressibility">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Conductance -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Conductance">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Conductivity -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Conductivity">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_CounterPulses -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_CounterPulses">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesUnsigned"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_8bitsSigned"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_8bitsUnsigned"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Current -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Current">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Density -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Density">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_ElectricCharge -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_ElectricCharge">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_ElectricCurrent -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_ElectricCurrent">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_ElectricCurrentDensity -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_ElectricCurrentDensity">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_ElectricDisplacement -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_ElectricDisplacement">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_ElectricFieldStrength -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_ElectricFieldStrength">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_ElectricFlux -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_ElectricFlux">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_ElectricFluxDensity -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_ElectricFluxDensity">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_ElectricPolarization -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_ElectricPolarization">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_ElectricPotential -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_ElectricPotential">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_ElectricPotentialDifference -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_ElectricPotentialDifference">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_ElectromagneticMoment -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_ElectromagneticMoment">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_ElectromotiveForce -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_ElectromotiveForce">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Enable -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Enable">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_1bit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Energy -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Energy">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_FluxDensity -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_FluxDensity">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Force -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Force">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Frequency -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Frequency">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_HeatCapacity -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_HeatCapacity">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_HeatFlowRate -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_HeatFlowRate">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_HeatQuantity -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_HeatQuantity">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Impedance -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Impedance">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Invert -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Invert">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_1bit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Kelvin_Hour -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Kelvin_Hour">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Kevin_Percentage -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Kevin_Percentage">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Length -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Length">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_LightQuantity -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_LightQuantity">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Litre_Hour -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Litre_Hour">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Luminance -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Luminance">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_LuminousFlux -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_LuminousFlux">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_LuminousIntensity -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_LuminousIntensity">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Lux -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Lux">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_MagneticFieldStrength -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_MagneticFieldStrength">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_MagneticFlux -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_MagneticFlux">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_MagneticFluxDensity -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_MagneticFluxDensity">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_MagnetomotiveForce -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_MagnetomotiveForce">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Mass -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Mass">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_MassFlux -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_MassFlux">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Momentum -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Momentum">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Occupied -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Occupied">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_1bit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_On_Off -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_On_Off">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_1bit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_OpenWindowOrDoor -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_OpenWindowOrDoor">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_1bit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Open_Close -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Open_Close">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_1bit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Parts_Million -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Parts_Million">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Percentage -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Percentage">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesFloat"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_8bitsSigned"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_8bitsUnsigned"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_PercentageDifferences -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_PercentageDifferences">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesSigned"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_PhaseAngle -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_PhaseAngle">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Power -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Power">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesFloat"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_PowerDenisity -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_PowerDenisity">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_PowerFactor -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_PowerFactor">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Pressure -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Pressure">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesFloat"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Pulses -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Pulses">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesUnsigned"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_PulsesDifferences -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_PulsesDifferences">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesSigned"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Pulses_Counter -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Pulses_Counter">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesSigned"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_RadioactiveActivity -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_RadioactiveActivity">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Ramp -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Ramp">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_1bit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Reactance -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Reactance">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Reset -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Reset">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_1bit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Resistance -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Resistance">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Resistivity -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Resistivity">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_SelfIndustance -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_SelfIndustance">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_SolidAngle -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_SolidAngle">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_SoundIntensity -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_SoundIntensity">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Speed -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Speed">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesFloat"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Start_Stop -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Start_Stop">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_1bit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_State -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_State">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_1bit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Step -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Step">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_1bit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Stress -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Stress">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_SurfaceExtension -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_SurfaceExtension">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_TemperatureAbsolute -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_TemperatureAbsolute">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_TemperatureDifference -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_TemperatureDifference">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesFloat"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Temperature_C -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Temperature_C">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesFloat"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_ThermalCapacity -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_ThermalCapacity">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_ThermalConductivity -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_ThermalConductivity">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_ThermoelectricPower -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_ThermoelectricPower">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_TimeLag -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_TimeLag">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesSigned"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_TimeLag_100ms -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_TimeLag_100ms">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesSigned"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_TimeLag_10ms -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_TimeLag_10ms">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesSigned"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_TimeLag_h -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_TimeLag_h">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesSigned"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_TimeLag_min -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_TimeLag_min">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesSigned"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_TimeLag_ms -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_TimeLag_ms">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesSigned"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_TimeLag_s -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_TimeLag_s">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesSigned"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Time_100ms -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Time_100ms">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesUnsigned"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Time_10ms -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Time_10ms">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesUnsigned"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Time_h -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Time_h">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesUnsigned"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Time_min -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Time_min">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesUnsigned"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Time_ms -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Time_ms">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesFloat"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesUnsigned"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Time_s -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Time_s">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesFloat"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesUnsigned"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Torque -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Torque">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Trigger -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Trigger">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_1bit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Up_Down -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Up_Down">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_1bit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Voltage -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Voltage">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_2bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Volume -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Volume">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_VolumeFlux -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_VolumeFlux">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Weight -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Weight">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#_Work -->
+
+    <owl:Class rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#_Work">
+        <rdfs:subClassOf rdf:resource="http://opendata.intellidomo.es/ontologiadomoticabd#_4bytesFloat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/ssn#Device -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Device"/>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/ssn#Sensor -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+    
+
+
+    <!-- http://vocab.deri.ie/cogs#Device -->
+
+    <owl:Class rdf:about="&cogs;Device"/>
+    
+
+
+    <!-- http://vocab.deri.ie/cogs#Sensor -->
+
+    <owl:Class rdf:about="&cogs;Sensor"/>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/nfo/#Image -->
+
+    <owl:Class rdf:about="http://www.semanticdesktop.org/ontologies/nfo/#Image"/>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#Builtin -->
+
+    <owl:Class rdf:about="&swrlb;Builtin"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://opendata.intellidomo.es/ontologiadomoticabd#valueVariable -->
+
+    <owl:NamedIndividual rdf:about="http://opendata.intellidomo.es/ontologiadomoticabd#valueVariable">
+        <rdf:type rdf:resource="&swrlb;Builtin"/>
+        <rdfs:label rdf:datatype="&xsd;string">Condition Action</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
